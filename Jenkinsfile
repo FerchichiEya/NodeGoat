@@ -20,7 +20,7 @@ pipeline {
 
     stage('SonarQube Scan') {
       steps {
-        withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+        withCredentials([string(credentialsId: 'Jenkins', variable: 'SONAR_TOKEN')]) {
           sh '''
             sonar-scanner \
               -Dsonar.projectKey=NodeGoat \
